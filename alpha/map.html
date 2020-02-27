@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Style circles with a data-driven property</title>
+<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.7.0/mapbox-gl.css" rel="stylesheet" />
+<style>
+	body { margin: 0; padding: 0; }
+	#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+	mapboxgl.accessToken = 'pk.eyJ1Ijoiam9zZXBod2lsayIsImEiOiJjazVxcDRtY3YwNGVqM2xvNnJobTB0cHpjIn0.C-6rOSTM39XSSutwoOurkA';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/light-v10',
+        center: [-2.3820395, 51.3801519],
+        zoom: 14,
+    });
+
+    map.on('load', function() {
+
+      // 'type': 'geojson',
+      // 'data':
+      //     'https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson',
+      // 'cluster': true,
+      // 'clusterRadius': 80,
+
+
+      map.addSource('ma', {
+         type: 'geojson',
+         cluster: true,
+         data: {
+             "type": "FeatureCollection",
+             "features": [
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.3565222222222224,51.38379166666667]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.3625416666666665,51.38393333333333]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.3521,51.38565555555555]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.3764972222222225,51.38346111111111]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.3620444444444444,51.38328611111111]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.3619861111111113,51.383266666666664]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.3576277777777777,51.381394444444446]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.357441666666667,51.381825]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.587175,51.44799166666667]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.3609166666666668,51.37884444444445]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.3586916666666666,51.38176388888889]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.376619444444445,51.383519444444445]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.360822222222222,51.378886111111115]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.3508944444444446,51.387425]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.3769166666666672,51.38333055555555]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.356738888888889,51.38367777777778]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.376433333333334,51.383808333333334]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[18.057275,59.330075]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[18.057030555555556,59.32985555555556]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.3766000000000003,51.383361111111114]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.376827777777778,51.38341388888889]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.361136111111111,51.378925]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.363891666666667,51.382736111111114]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.3763750000000003,51.383158333333334]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.3642194444444447,51.38281944444444]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.356611111111111,51.383877777777776]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[0.13364166666666663,51.512991666666665]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.3624972222222222,51.382530555555554]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.3640944444444445,51.38285833333333]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.3601916666666667,51.379441666666665]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.373394444444445,51.382933333333334]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.3625166666666666,51.38263611111111]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.357111111111111,51.37923888888889]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.348888888888889,51.38766944444444]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.3638611111111114,51.38299444444444]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.3653,51.38275277777778]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.3513972222222224,51.38668333333333]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.350616666666667,51.38718055555555]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.3702333333333336,51.35626944444444]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.356883333333333,51.377769444444446]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.3622472222222224,51.38034444444445]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.364188888888889,51.382019444444445]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.351377777777778,51.38670833333333]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.3561444444444444,51.383358333333334]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.3638333333333335,51.38292222222222]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.3647750000000003,51.38246388888889]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.392572222222222,51.36444444444444]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.363925,51.38295]}},
+	 {"type":"Feature","properties":"","geometry":{"type":"Point","coordinates":[-2.3765166666666673,51.38332777777778]}},
+
+
+
+
+
+ ]
+         }
+      });
+
+
+        map.addLayer({
+            'id': 'population',
+            'type': 'circle',
+            'source': 'ma',
+            paint: {
+            'circle-color': '#11b4da',
+            'circle-stroke-width': 1,
+						'circle-radius': 10,
+            'circle-stroke-color': '#fff',
+
+            'circle-radius': [
+'step',
+['get', 'point_count'],
+15,
+100,
+30,
+750,
+40
+]
+            }
+        });
+
+
+        map.addLayer({
+        id: 'cluster-count',
+        type: 'symbol',
+        source: 'ma',
+        filter: ['has', 'point_count'],
+        layout: {
+        'text-field': '{point_count_abbreviated}',
+        'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+        'text-size': 14
+        }
+        });
+
+
+        // inspect a cluster on click
+        map.on('click', 'clusters', function(e) {
+        var features = map.queryRenderedFeatures(e.point, {
+        layers: ['clusters']
+        });
+        var clusterId = features[0].properties.cluster_id;
+        map.getSource('earthquakes').getClusterExpansionZoom(
+        clusterId,
+        function(err, zoom) {
+        if (err) return;
+
+        map.easeTo({
+        center: features[0].geometry.coordinates,
+        zoom: zoom
+        });
+        }
+        );
+        });
+
+    });
+</script>
+
+</body>
+</html>
